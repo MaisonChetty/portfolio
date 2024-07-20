@@ -1,0 +1,35 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    .heroButton {
+        @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs
+        tracking-widest text-gray-500 transition-all hover:border-[#68c1df]/40 hover:text-[#68c1df]/40
+      }
+    .dropDownProfile{
+      @apply
+      absolute
+      text-center
+      md:hidden
+      top-14
+      right-2
+      p-5
+      rounded-md
+      bg-white
+      border-solid
+      border
+      border-gray-600
+      
+    }
+    .dropDownProfile::before{
+      @apply
+      absolute
+      top-0
+      right-0
+      w-0
+      h-0
+      bg-white
+      rotate-45
+    }
+  }
