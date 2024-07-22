@@ -1,15 +1,29 @@
-"use client";
-import React, { useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
 import "./tail.css";
-import Dropdown from "./Dropdown";
-import Image from "next/image";
+import { client } from "@/app/lib/sanity";
+import Dropdown from "@/components/Drop_d"
+import { social } from "@/app/lib/getSocials";
 
 type Props = {};
 
-export default function Header({}: Props) {
-  const [openProfile, setOpenProfile] = useState(false);
+async function getData() {
+  const query =`
+    *[_type == "social"] | order(_createdAt desc){
+title,
+  url
+}`
+
+const data = await client.fetch(query)
+
+return data
+}
+
+
+
+export default async function Header({}: Props) {
+  const data:social[] = await getData();
+
   return (
     <header
       className="
@@ -24,21 +38,14 @@ export default function Header({}: Props) {
     z-10"
     >
       <div className="flex flex-row items-center">
-        <SocialIcon
-          url="https://www.tiktok.com/@flower_floof_"
-          fgColor="transparent"
-          bgColor="gray"
-        />
-        <SocialIcon
-          url="https://www.youtube.com"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://www.instagram.com/kiarawoods472/?next=%2F"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {data.map((post, idx,) => (
+          <SocialIcon
+            key={idx}
+            url={post.url}
+            fgColor="transparent"
+            bgColor="gray"
+          />
+        ))}
       </div>
 
       <div className="p-5 hidden md:inline-flex">
@@ -70,17 +77,9 @@ export default function Header({}: Props) {
           </p>
         </Link>
 
-        {openProfile && <Dropdown />}
-        <Link href="" onClick={() => setOpenProfile((prev) => !prev)}>
-          <Image
-            height={16}
-            width={16}
-            src="https://www.svgrepo.com/show/336707/drop-down-list.svg"
-            alt="Dropdown Menu"
-            className="md:hidden"
-          />
-        </Link>
+        <Dropdown />
       </div>
     </header>
   );
 }
+

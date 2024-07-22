@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import autoprefixer from 'autoprefixer';
 
 const config: Config = {
   content: [
