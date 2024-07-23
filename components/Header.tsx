@@ -2,27 +2,27 @@ import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
 import "./tail.css";
 import { client } from "@/app/lib/sanity";
-import Dropdown from "@/components/Drop_d"
-import { social } from "@/app/lib/getSocials";
+import Dropdown from "@/components/Drop_d";
+import { Social } from "@/app/lib/getSocials";
+import { groq } from "next-sanity";
 
 type Props = {};
 
 async function getData() {
-  const query =`
-    *[_type == "social"] | order(_createdAt desc){
-title,
-  url
-}`
+  const query = groq`
+  *[_type == "social"]{
+   _id,
+   url
+  }
+`;
 
-const data = await client.fetch(query)
+  const social = await client.fetch(query);
 
-return data
+  return social;
 }
 
-
-
 export default async function Header({}: Props) {
-  const data:social[] = await getData();
+  const social: Social[] = await getData();
 
   return (
     <header
@@ -38,10 +38,10 @@ export default async function Header({}: Props) {
     z-10"
     >
       <div className="flex flex-row items-center">
-        {data.map((post, idx,) => (
+        {social.map((socials) => (
           <SocialIcon
-            key={idx}
-            url={post.url}
+            key={socials._id}
+            url={socials.url}
             fgColor="transparent"
             bgColor="gray"
           />
@@ -49,11 +49,11 @@ export default async function Header({}: Props) {
       </div>
 
       <div className="p-5 hidden md:inline-flex">
+        <Link href={"./"}>
+          <button className="heroButton">Home</button>
+        </Link>
         <Link href={"/about"}>
           <button className="heroButton">About</button>
-        </Link>
-        <Link href={"/experience"}>
-          <button className="heroButton">Experience</button>
         </Link>
         <Link href={"/skills"}>
           <button className="heroButton">Skills</button>
@@ -76,10 +76,8 @@ export default async function Header({}: Props) {
             Get in touch
           </p>
         </Link>
-
         <Dropdown />
       </div>
     </header>
   );
 }
-

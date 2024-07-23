@@ -38,7 +38,7 @@ export default{
     {
       name: 'linkToBuilds',
       title: 'LinkToBuilds',
-      type: 'url',
+      type: 'string',
     },
   ],
 }

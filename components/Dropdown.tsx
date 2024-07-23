@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 
 function Dropdown() {
   return (
-    <div className='flex flex-col dropDownProfile'>
-      <ul className='flex flex-col gap-4'>
+    <div className="flex flex-col dropDownProfile">
+      <ul className="flex flex-col gap-4">
         <li>
           <Link href="/about">About</Link>
         </li>
@@ -17,12 +17,12 @@ function Dropdown() {
         <li>
           <Link href="/skills">Skills</Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/experience">Experience</Link>
-        </li>
+        </li> */}
       </ul>
     </div>
-  )
+  );
 }
 
-export default Dropdown
+export default Dropdown;

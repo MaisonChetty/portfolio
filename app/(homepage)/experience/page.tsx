@@ -1,13 +1,33 @@
+import React from "react";
+import ExperienceCards from "@/components/ExperienceCards";
+import { client } from "@/app/lib/sanity";
+import { Experience } from "@/app/lib/getSocials";
+import { groq } from "next-sanity";
 
-import React from 'react'
-import ExperienceCards from '@/components/ExperienceCards'
+type Props = {};
 
-type Props = {}
+async function getData() {
+  const query = groq`
+  *[_type == "experience"]{
+    _id,
+   points,
+     companyImage,
+     company,
+      jobTitle,
+      technologies->
+  }
+   `;
+  const data = await client.fetch(query);
 
-const Experience = (props: Props) => {
+  return data;
+}
+
+export default async function page({}: Props) {
+  const data: Experience[] = await getData();
   return (
-    <div 
-    className='h-screen
+    <div>
+      <div
+        className="h-screen
     flex
     relative
     overflow-hidden
@@ -18,28 +38,26 @@ const Experience = (props: Props) => {
     px-10
     justify-evenly
     mx-auto
-    items-center'>
-        <h3 className='
-        absolute
-        lg:top-16
-        md:top-12 
-        top-7
+    items-center"
+      >
+        <h3
+          className="
+        absolute 
+        top-24
         uppercase
         tracking-[20px]
         text-gray-500
-        text-2xl' >
-            Experience
-         </h3>
+        text-2xl"
+        >
+          Experience
+        </h3>
 
-         <div className=' w-full flex spce-x-5 overflow-x-scroll p-10 snap-x snap-mandatory'>
-            <ExperienceCards />
-            <ExperienceCards />
-            <ExperienceCards />
-            <ExperienceCards />
-            
-         </div>
+        <div className=" w-full flex spce-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
+          {data.map((exp) => (
+            <ExperienceCards key={exp._id} exprience={exp} />
+          ))}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
-
-export default Experience

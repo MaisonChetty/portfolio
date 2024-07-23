@@ -1,23 +1,30 @@
-'use client'
 import React from 'react'
-import { motion } from 'framer-motion'
-import Skill from '@/components/Skill'
+import Skills from '@/components/Skills'
+import { client } from '@/app/lib/sanity';
+import { Skill as SkillType } from '@/app/lib/getSocials';
+import { groq } from 'next-sanity';
 
 type Props = {}
 
-const Skills = (props: Props) => {
+async function getData() {
+    const query = groq`
+  *[_type == "skill"]{
+    _id,
+   title,
+      progress,
+      image
+
+  }
+     `;
+    const skill = await client.fetch(query);
+  
+    return skill;
+  }
+
+export default async function page() {
+    const skill: SkillType[] = await getData();
   return (
-    <motion.div 
-    initial={{
-        opacity:0,
-    }}
-    whileInView={{
-        opacity:1,
-    }}
-    transition={{
-        duration:1.5,
-    }}
-    
+    <div   
     className='h-screen
     flex relative flex-col text-center md:text-left xl:flex-row
     max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0
@@ -39,21 +46,12 @@ const Skills = (props: Props) => {
         </h3>
 
         <div className='grid grid-cols-4 gap-5'>
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
-            <Skill />
+            {skill.map((skill) => (
+            <Skills 
+            key={skill._id} 
+            skill={skill} />
+          ))}
         </div>
-    </motion.div>
+    </div>
   );
 }
-
-export default Skills

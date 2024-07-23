@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Image from "next/image";
 import Link from "next/link";
-import tree from "@/images/tree.jpg";
+import image1 from "@/images/image1.jpeg";
 
 function AdminLayout({
   children,
@@ -10,7 +10,7 @@ function AdminLayout({
 }>) {
   return (
     <div
-      className="bg-black
+      className="bg-gray-700
     text-white 
     h-screen
     snap-end
@@ -30,7 +30,7 @@ function AdminLayout({
           <div className="flex items-center justify-center">
             <Image
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0"
-              src={tree}
+              src={image1}
               alt=""
             />
           </div>

@@ -1,5 +1,3 @@
-
-
 export default {
   name: 'pageInfo',
   title: 'PageInfo',
@@ -24,7 +22,7 @@ export default {
       }
     },
     {
-      name: 'backgroundInfo',
+      name: 'background_Info',
       title: 'BackgroundInformation',
       type: 'string',
     },

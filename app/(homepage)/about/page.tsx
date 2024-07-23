@@ -1,15 +1,17 @@
-import { pageInfo } from "@/app/lib/getSocials";
+import { PageInfo } from "@/app/lib/getSocials";
 import { client, urlFor } from "@/app/lib/sanity";
+import { groq } from "next-sanity";
 import Image from "next/image";
 import React from "react";
 
 type Props = {};
 
 async function getData() {
-  const query = `
+  const query = groq`
 *[_type == "pageInfo"]  | order(_createdAt desc){
-backgroundInfo,
+  background_Info,
   profilePic
+
 }
    `;
   const data = await client.fetch(query);
@@ -18,7 +20,7 @@ backgroundInfo,
 }
 
 export default async function About({}: Props) {
-  const data: pageInfo[] = await getData();
+  const data: PageInfo[] = await getData();
   return (
     <div>
       {data.map((post, idx) => (
@@ -32,8 +34,7 @@ export default async function About({}: Props) {
     max-w-7xl px-10 justify-evenly mx-auto items-center"
         >
           <h3
-            className="absolute lg:top-24
-        md:top-14 top-7
+            className="absolute top-24
         uppercase tracking-[20px]
          text-white text-2xl md:text-3xl lg:text-4xl"
           >
@@ -41,8 +42,8 @@ export default async function About({}: Props) {
           </h3>
           <Image
             src={urlFor(post.profilePic).url()}
-            height={1}
-              width={1}
+            height={900}
+            width={900}
             alt=""
             className="mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
          md:rounded-lg md:w-64px md:h-64px xl:w-[400px] xl:h-[500px]"
@@ -54,7 +55,7 @@ export default async function About({}: Props) {
               <span className="underline decoration-[#84e0ff]">little</span>{" "}
               background
             </h4>
-            <p className="text-base justify-center">{post.backgroundInfo}</p>
+            <p className="text-base justify-center">{post.background_Info}</p>
           </div>
         </div>
       ))}

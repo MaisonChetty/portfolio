@@ -2,15 +2,15 @@
 import React from 'react';
 import {Cursor, useTypewriter} from 'react-simple-typewriter';
 import BackgroundCircles from '@/components/BackgroundCircles';
-import tree from "@/images/tree2.jpg"
+import image1 from "@/images/image1.jpeg"
 import Image from 'next/image';
 
 type Props = {}
 
 function Hero() {
     const [text, count]= useTypewriter({
-        words: ['Hi, The Names is Kiara',
-            'Girl who loves to create'],
+        words: ['Hi, My Name is Maison',
+            'Who loves to Build'],
         loop: true,
         delaySpeed:2000,
     })
@@ -26,16 +26,18 @@ function Hero() {
     scroll-smooth'>
         <BackgroundCircles />
         <Image 
-        className='relative rounded-full h-32 w-32 md:h-52 md:w-52 mx-auto object-cover'
-        src={tree}
-        alt="tree" />
+        className='relative rounded-full h-32 w-32 md:h-64 md:w-64 mx-auto object-cover'
+        src={image1}
+        height={900}
+        width={900}
+        alt="Profile" />
         <div className='z-20'>
             <h2 className='lg:text-xl
             text-sm 
             uppercase 
             text-gray-500 
             pb-2 
-            tracking-[15px]'>Game Designer</h2>
+            tracking-[15px]'>Web Developer</h2>
             <h1 className='text-5xl 
             lg:text-6xl 
             font-semibold 
@@ -48,4 +50,4 @@ function Hero() {
   )
 }
 
-export default Hero
+export default Hero;
