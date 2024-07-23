@@ -15,8 +15,7 @@ async function getData() {
       summary,
       image,
       linkToBuilds,
-      technologies->,
-  }
+      technologies->}
    `;
   const project = await client.fetch(query);
 
