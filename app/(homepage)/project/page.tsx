@@ -9,7 +9,7 @@ type Props = {};
 
 async function getData() {
   const query = groq`
-  *[_type == "project"] | order(_createdAt desc){
+  *[_type == "project"] | order(_createdAt asc){
     _id,
    title,
       summary,
