@@ -55,7 +55,31 @@ export default async function About({}: Props) {
               <span className="underline decoration-[#84e0ff]">little</span>{" "}
               background
             </h4>
-            <p className="text-base justify-center">{post.background_Info}</p>
+            <p className="text-base justify-center">
+              My name is Maison Chetty, a passionate Web and Game Developer
+              based in Johannesburg, South Africa. 
+              <br />
+              As part of my final year of
+              study, I am currently seeking a work Integrated learning
+              internship in Web development or Game Development. 
+              <br />
+              Academically I will complete a Diploma in Information Technology in Nov 2024 and
+              BSC Degree in Information Technology in Nov 2025. With multiple
+              academic distinctions in Software Engineering, Information
+              Systems, Internet Programming, Database Systems, Web Technology,
+              Networks and Programming. 
+              <br />
+              I excel in React, Tailwind CSS, NextJS,
+              Unity, and Unreal Engine. Professionally, I have assisted in
+              developing and maintaining a WordPress website for Blue Storm
+              Trading and have sales experience. My extracurricular achievements
+              include top-three in the Sonny Sangha Metaverse Challenge with
+              NextJS and World Championships in karate. 
+              <br />
+              I am eager to apply my
+              skills and contribute to innovative projects through this
+              internship.
+            </p>
           </div>
         </div>
       ))}
