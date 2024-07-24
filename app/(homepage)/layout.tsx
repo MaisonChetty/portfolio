@@ -25,8 +25,8 @@ function AdminLayout({
     >
       <Header />
       <div className="">{children}</div>
-      <Link href="./">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
+      <Link className="" href="./">
+        <footer className="sticky sm:hidden md:flex md:justify-center bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <Image
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0"

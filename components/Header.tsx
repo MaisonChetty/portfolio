@@ -33,7 +33,8 @@ export default async function Header({}: Props) {
     shadow-sm 
     text-gray-800
     flex 
-    justify-between 
+    justify-between
+    md:items-center
     p-2
     z-10"
     >
