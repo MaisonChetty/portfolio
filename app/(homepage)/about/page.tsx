@@ -45,12 +45,12 @@ export default async function About({}: Props) {
             height={900}
             width={900}
             alt=""
-            className="mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover
+            className="mb-20 md:mb-0 flex-shrink-0 w-48 h-48 rounded-full object-cover
          md:rounded-lg md:w-64px md:h-64px xl:w-[400px] xl:h-[500px]"
           />
 
           <div className=" space-y-10 px-0 md:px-10">
-            <h4 className="text-4xl font-semibold ">
+            <h4 className="md:text-4xl text-xl font-semibold ">
               Here is a{" "}
               <span className="underline decoration-[#84e0ff]">little</span>{" "}
               background
