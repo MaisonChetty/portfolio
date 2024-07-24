@@ -25,7 +25,7 @@ function AdminLayout({
     >
       <Header />
       <div className="">{children}</div>
-      <Link className="" href="./">
+      {/* <Link className="" href="./">
         <footer className="sticky hidden md:flex md:justify-center bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <Image
@@ -35,7 +35,7 @@ function AdminLayout({
             />
           </div>
         </footer>
-      </Link>
+      </Link> */}
     </div>
   );
 }

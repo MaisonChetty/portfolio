@@ -28,7 +28,7 @@ body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
     "
     >
       <h3
-        className="absolute lg:top-32
+        className="absolute lg:top-10
         md:top-16
         top-12
         text-2xl md:text-3xl lg:text-4xl 

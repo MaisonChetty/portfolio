@@ -32,7 +32,8 @@ export default async function page() {
     overflow-x-scroll"
     >
       <h3
-        className="absolute top-24 
+        className="absolute lg:top-10
+        md:top-12 
         uppercase tracking-[20px]
          text-gray-500 text-2xl"
       >
@@ -40,8 +41,9 @@ export default async function page() {
       </h3>
 
       <div
-        className="relative w-full flex overflow-y-scroll 
-      overflow-x-hidden snap-x snap-mandatory 
+        className="relative w-full flex overflow-x-scroll 
+      snap-x snap-mandatory
+      
       scroll-my-2
       scrollbar-thick
       scrollbar-track-gray-400/20
