@@ -38,7 +38,7 @@ export default async function Header({}: Props) {
     p-2
     z-10"
     >
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center text-gray-300 cursor-pointer">
         {social.map((socials) => (
           <SocialIcon
             key={socials._id}
