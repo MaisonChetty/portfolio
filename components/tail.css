@@ -12,4 +12,12 @@
         md:hidden
         tracking-widest text-gray-500 transition-all hover:border-[#68c1df]/40 hover:text-[#68c1df]/40
       }
+      .contactInput{
+        @apply outline-none
+        rounded-sm
+        border-b
+        px-6
+        py-4
+        transition-all
+      }
   }

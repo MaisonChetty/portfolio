@@ -2,6 +2,7 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import "./tail.css"
 
 type Inputs = {
   name: string;
@@ -44,33 +45,33 @@ body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[pink] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">+2776 235 6734</p>
+            <p className="md:text-2xl text-xl">+2776 235 6734</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[pink] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Johannesburg, South Africa</p>
+            <p className="md:text-2xl text-xl">Johannesburg, South Africa</p>
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[pink] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">maisonchetty4@gmail.com</p>
+            <p className="md:text-2xl text-xl">maisonchetty4@gmail.com</p>
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 md:w-fit md:mx-auto w-90"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-1 md:space-x-2 md:w-fit">
             <input
               {...register("name")}
               placeholder="Name"
-              className="contactInput"
+              className="contactInput w-44"
               type="text"
             />
             <input
               {...register("email")}
               placeholder="Email"
-              className="contactInput"
+              className="contactInput w-44"
               type="email"
             />
           </div>
@@ -88,7 +89,7 @@ body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
           />
           <button
             type="submit"
-            className=" bg-[pink] py-5 px-10 rounded-md text-black 
+            className=" bg-[pink] py-5 px-1 rounded-md text-black 
                 font-bold text-lg"
           >
             Submit

@@ -1,0 +1,16 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+      .contactInput{
+        @apply outline-none
+        rounded-sm
+        border-b
+        md:px-6
+        md:py-4
+        px-0
+        py-0
+        transition-all
+      }
+  }
