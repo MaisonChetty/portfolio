@@ -10,7 +10,7 @@ import Link from "next/link";
 
 function Dropdown() {
   return (
-    <div className="heroButton">
+    <div className="dropdown">
       <DropdownMenu>
         <DropdownMenuTrigger>Drop</DropdownMenuTrigger>
         <DropdownMenuContent>

@@ -58,7 +58,7 @@ export default async function page() {
           >
             <Link href={project?.linkToBuilds}>
               <Image
-                className="rounded-md h-4/5 w-auto "
+                className="rounded-md h-4/5 w-auto md:h-3/5 lg:h-4/5"
                 src={urlFor(project?.image).url()}
                 height={900}
                 width={900}
@@ -66,7 +66,7 @@ export default async function page() {
               />
             </Link>
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+              <h4 className="md:text-4xl text-xl  font-semibold text-center">
                 <span
                   className="
                 underline decoration-[pink]/50"
@@ -88,9 +88,9 @@ export default async function page() {
                 ))}
               </div>
 
-              <p className="text-lg text-center md:text-left">
+              {/* <p className="text-lg text-center md:text-left">
                 {project.summary}
-              </p>
+              </p> */}
             </div>
           </div>
         ))}

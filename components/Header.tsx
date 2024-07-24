@@ -12,8 +12,7 @@ async function getData() {
   const query = groq`
   *[_type == "social"]{
    _id,
-   url
-  }
+   url}
 `;
 
   const social = await client.fetch(query);
@@ -41,7 +40,7 @@ export default async function Header({}: Props) {
         {social.map((socials) => (
           <SocialIcon
             key={socials._id}
-            style={{ height: 50, width: 50 }} 
+            style={{ height: 50, width: 50}} 
             url={socials.url}
             fgColor="transparent"
             bgColor="gray"
@@ -49,7 +48,7 @@ export default async function Header({}: Props) {
         ))}
       </div>
 
-      <div className="p-5 hidden md:inline-flex">
+      <div className="p-5 hidden md:inline-flex space-x-1">
         <Link href={"./"}>
           <button className="heroButton">Home</button>
         </Link>
