@@ -26,7 +26,7 @@ export default async function About({}: Props) {
       {data.map((post, idx) => (
         <div
           key={idx}
-          className="flex flex-col  overflow-hidden
+          className="flex flex-col
     relative 
     h-screen
     text-center
