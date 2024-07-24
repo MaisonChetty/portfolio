@@ -41,6 +41,7 @@ export default async function Header({}: Props) {
         {social.map((socials) => (
           <SocialIcon
             key={socials._id}
+            style={{ height: 50, width: 50 }} 
             url={socials.url}
             fgColor="transparent"
             bgColor="gray"
