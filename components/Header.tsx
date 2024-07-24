@@ -2,7 +2,7 @@ import { SocialIcon } from "react-social-icons";
 import Link from "next/link";
 import "./tail.css";
 import { client } from "@/app/lib/sanity";
-import Dropdown from "@/components/Drop_d";
+import Dropdown from "@/components/Dropdown";
 import { Social } from "@/app/lib/getSocials";
 import { groq } from "next-sanity";
 
@@ -33,12 +33,11 @@ export default async function Header({}: Props) {
     shadow-sm 
     text-gray-800
     flex 
-    justify-between
-    md:items-center
+    justify-center
     p-2
     z-10"
     >
-      <div className="flex flex-row items-center text-gray-300 cursor-pointer">
+      <div className="flex flex-row object-cover pr-5 items-center text-gray-300 cursor-pointer">
         {social.map((socials) => (
           <SocialIcon
             key={socials._id}
@@ -77,7 +76,10 @@ export default async function Header({}: Props) {
             Get in touch
           </p>
         </Link>
-        <Dropdown />
+
+        <div className="p-5">
+          <Dropdown/>
+        </div>
       </div>
     </header>
   );

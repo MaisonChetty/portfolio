@@ -1,26 +1,36 @@
-import React from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 
 function Dropdown() {
   return (
-    <div className="flex flex-col dropDownProfile">
-      <ul className="flex flex-col gap-4">
-        <li>
-          <Link href="/about">About</Link>
-        </li>
-        <li>
-          <Link href="./">Home</Link>
-        </li>
-        <li>
-          <Link href="/project">Project</Link>
-        </li>
-        <li>
-          <Link href="/skills">Skills</Link>
-        </li>
-        {/* <li>
-          <Link href="/experience">Experience</Link>
-        </li> */}
-      </ul>
+    <div className="heroButton">
+      <DropdownMenu>
+        <DropdownMenuTrigger>Drop</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>
+            <Link href="./">Home</Link>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <Link href="/about">About</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            {" "}
+            <Link href="/project">Project</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/skills">Skills</Link>
+          </DropdownMenuItem>
+          {/* <DropdownMenuItem>Subscription</DropdownMenuItem> */}
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }
