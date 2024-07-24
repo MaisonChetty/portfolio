@@ -40,9 +40,9 @@ export default async function page() {
       </h3>
 
       <div
-        className="relative w-full flex overflow-x-scroll 
-      overflow-y-hidden snap-x snap-mandatory z-20
-      scroll-mx-2
+        className="relative w-full flex overflow-y-scroll 
+      overflow-x-hidden snap-x snap-mandatory 
+      scroll-my-2
       scrollbar-thick
       scrollbar-track-gray-400/20
       scrollbar-thumb-[pink]/80"
@@ -75,7 +75,7 @@ export default async function page() {
                 </span>{" "}
                 {project.title}
               </h4>
-              <div className="flex items-center space-x-2 justify-center">
+              <div className="flex flex-col items-center space-x-2 justify-center">
                 {project.technologies?.map((technology) => (
                   <Image
                     key={technology._id}

@@ -31,7 +31,7 @@ export default async function page() {
     mx-auto items-center'
     >
         <h3 className=' absolute 
-        lg:top-24
+        lg:top-20
         md:top-14
         top-7 
         scroll-smooth
@@ -40,7 +40,7 @@ export default async function page() {
             Skills
         </h3>
 
-        <h3 className=' absolute lg:top-36 md:top-24 top-16 
+        <h3 className=' absolute lg:top-32 md:top-24 top-16 
         uppercase tracking-[3px] text-gray-500 text-sm'>
             hover over a skill for current profieciency
         </h3>
