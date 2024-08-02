@@ -8,12 +8,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 
+import {MoreVertical} from "lucide-react"
+
 function Dropdown() {
   return (
-    <div className="dropdown">
+    <div className="dropdown m-0">
       <DropdownMenu>
-        <DropdownMenuTrigger>Drop</DropdownMenuTrigger>
-        <DropdownMenuContent>
+        <DropdownMenuTrigger>
+          <MoreVertical className='h-4 w-4 text-indigo-600 m-0'/>
+          </DropdownMenuTrigger>
+        <DropdownMenuContent className="bg-opacity-50">
           <DropdownMenuLabel>
             <Link href="./">Home</Link>
           </DropdownMenuLabel>

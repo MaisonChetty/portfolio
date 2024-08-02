@@ -18,7 +18,7 @@ function Hero() {
     <div className='h-screen
     flex 
     flex-col 
-    space-y-8 
+    space-y-8
     items-center 
     justify-center
     text-center

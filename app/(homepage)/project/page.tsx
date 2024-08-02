@@ -4,6 +4,14 @@ import { Project } from "@/app/lib/getSocials";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 type Props = {};
 
@@ -32,7 +40,7 @@ export default async function page() {
     overflow-x-scroll"
     >
       <h3
-        className="absolute lg:top-10
+        className="absolute top-8 lg:top-10
         md:top-12 
         uppercase tracking-[20px]
          text-gray-500 text-2xl"
@@ -41,21 +49,21 @@ export default async function page() {
       </h3>
 
       <div
-        className="relative w-full flex overflow-x-scroll 
-      snap-x snap-mandatory
-      
+        className="relative w-full flex overflow-x-scroll
+        items-center
       scroll-my-2
       scrollbar-thick
       scrollbar-track-gray-400/20
       scrollbar-thumb-[pink]/80"
       >
-        {project?.map((project, i) => (
-          // eslint-disable-next-line react/jsx-key
-          <div
-          key={project._id}
-            className="w-screen flex-shrink-0 snap-center
-          flex flex-col space-y-1 items-center justify-center p-20 
-          md:p-44 h-screen
+          <Carousel className="">
+            <CarouselContent>
+            {project?.map((project, i) => (
+            <CarouselItem key={project._id} className="">
+            <div
+            className="w-auto flex-shrink-0 snap-center
+          flex flex-col space-y-1 items-center justify-center
+           h-screen
           "
           >
             <Link href={project?.linkToBuilds}>
@@ -89,13 +97,15 @@ export default async function page() {
                   />
                 ))}
               </div>
-
-              {/* <p className="text-lg text-center md:text-left">
-                {project.summary}
-              </p> */}
             </div>
           </div>
-        ))}
+            </CarouselItem>
+                    ))}
+            </CarouselContent>
+            <CarouselPrevious />
+          <CarouselNext />
+          </Carousel>
+
       </div>
     </div>
   );

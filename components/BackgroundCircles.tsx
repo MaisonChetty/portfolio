@@ -23,7 +23,7 @@ function BackgroundCircles({}: Props) {
       <div
         className="absolute 
         border 
-        border-[#726e6e] 
+        border-[#522bac] 
         rounded-full 
         h-[200px] w-[200px] mt-52
         animate-ping"
@@ -31,7 +31,7 @@ function BackgroundCircles({}: Props) {
       <div
         className="absolute 
         border 
-        border-[#726e6e] 
+        border-[#64289c] 
         rounded-full 
         h-[300px] w-[300px] mt-52
         animate-ping"
@@ -39,7 +39,7 @@ function BackgroundCircles({}: Props) {
       <div
         className="absolute 
         border 
-        border-[#726e6e] 
+        border-[#4628af] 
         rounded-full 
         h-[500px] w-[500px] mt-52
         animate-ping"
@@ -47,7 +47,7 @@ function BackgroundCircles({}: Props) {
       <div
         className="absolute 
         border 
-        border-[#68c1df] 
+        border-[#a734f3] 
         opacity-20 
         rounded-full 
         h-[650px] w-[650px] 
@@ -57,7 +57,7 @@ function BackgroundCircles({}: Props) {
       <div
         className="absolute 
         border 
-        border-[#726e6e] 
+        border-[#632596b7] 
         rounded-full 
         h-[800px] w-[800px] mt-52
         animate-ping"

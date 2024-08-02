@@ -19,6 +19,7 @@ function AdminLayout({
     overflow-x-hidden
     lg:overflow-hidden
     z-0
+    bg-gradient-to-bl from-white to-indigo-600
     scrollbar
     scrollbar-track-gray-400/20
     scrollbar-thumb-[pink]/8"
